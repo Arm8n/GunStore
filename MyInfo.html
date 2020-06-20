@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/glyphicon.css">
+    <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
+    <title>Hello, world!</title>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="nav navbar navbar-fixed-top fixed-top navbar-default  navbar-expand-lg  navbar-dark bg-dark px-4 pb-2 m-0 ">
+    <a class="navbar-brand d-none d-sm-block" href="index.html"><h2>GunStore</h2></a>
+
+    <div class="d-block d-lg-none d-flex mr-auto >
+                <li class=" nav-item nav-item ml-3 ml-lg-auto
+    ">
+    <div class="d-md-flex d-sm-block d-block ml-3 pt-2 ">
+        <select class="selectpicker" data-width="fit">
+            <option class="ml-3" data-content='<span class="flag-icon flag-icon-am"></span>'></option>
+            <option class="ml-3" data-content='<span class="flag-icon flag-icon-ru"></span>'></option>
+            <option class="ml-3" data-content='<span class="flag-icon flag-icon-us"></span>'></option>
+        </select>
+    </div>
+    </li>
+    <li class="nav-item nav-item ">
+        <div class="d-md-flex d-sm-block d-block ml-3 pt-2 ">
+            <select class="selectpicker" data-width="fit">
+                <option class="ml-3">$</option>
+                <option class="ml-3">€</option>
+                <option class="ml-3"></option>
+            </select>
+        </div>
+    </li>
+    <li class="nav-item ml-3 ">
+        <div class="d-md-flex d-sm-block d-block  pt-2">
+            <div class="dropdown">
+                <div class="dropdown">
+                    <button class="btn btn-outline-danger " type="button" id="dropdownMenuButton1"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalLRForm">Login/up</a>
+                        <hr>
+                        <a class="dropdown-item" href="MyAccount.html">Account Settings</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myOrdersModal">My Orders</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="w-100 navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html"><h4>Home</h4><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " href="shop.html"><h4>Categories</h4></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="#"><h4>Contact</h4></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><h4>About us</h4></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><h4>Gift Cards</h4></a>
+            </li>
+            <div class="d-none d-lg-flex ml-auto">
+                <li class="nav-item nav-item ml-3 ml-lg-auto ">
+                    <div class="d-md-flex d-sm-block d-block ml-3 pt-2 ">
+                        <select class="selectpicker" data-width="fit">
+                            <option class="ml-3" data-content='<span class="flag-icon flag-icon-am"></span>'></option>
+                            <option class="ml-3" data-content='<span class="flag-icon flag-icon-ru"></span>'></option>
+                            <option class="ml-3" data-content='<span class="flag-icon flag-icon-us"></span>'></option>
+                        </select>
+                    </div>
+                </li>
+                <li class="nav-item nav-item ">
+                    <div class="d-md-flex d-sm-block d-block ml-3 pt-2 ">
+                        <select class="selectpicker" data-width="fit">
+                            <option class="ml-3">$</option>
+                            <option class="ml-3">€</option>
+                            <option class="ml-3"></option>
+                        </select>
+                    </div>
+                </li>
+                <li class="nav-item ml-3 dropdown-submenu pull-left ">
+                    <div class="d-md-flex d-sm-block d-block  pt-2">
+                        <div class="dropdown">
+                            <div class="dropdown">
+                                <button class="btn btn-outline-danger " type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                </button>
+                                <div class="dropdown-menu d-show " aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalLRForm">Login/up</a>
+                                    <hr>
+                                    <a class="dropdown-item" href="MyAccount.html">Account Settings</a>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myOrdersModal">My
+                                        Orders</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </div>
+
+</nav>
+
+<!--Account settings navbar-->
+<div class="container mb-3 ">
+    <div class="btn-group btn-group-lg" style="margin-top: 85px" role="group" aria-label="...">
+        <a href="MyAccount.html">
+            <button type="button" class="btn  btn-outline-primary">My Account</button>
+        </a>
+        <a href="MyInfo.html">
+            <button type="button" class="btn ml-2 btn-primary">My Info</button>
+        </a>
+    </div>
+</div>
+
+<!-- User Info -->
+<div class="container ">
+    <div class="panel-body inf-content p-3">
+        <div class="row">
+            <div class="col-md-4 ">
+                <div class="d-flex justify-content-center">
+                    <img alt="product img" title="" class="img-fluid mt-4  rounded-circle img-thumbnail isTooltip"
+                         src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario">
+                </div>
+                <ul title="Ratings" class="list-inline ratings text-center d-flex justify-content-center">
+                    <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <strong class="text-white">Information</strong><br>
+                <div class="table-responsive">
+                    <table class="table table-user-information">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <strong class="text-white">
+                                    <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                                    ID
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                123456789
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong class="text-white">
+                                    <span class="glyphicon glyphicon-user  text-primary"></span>
+                                    Name
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                Arman
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong class="text-white">
+                                    <span class="glyphicon glyphicon-cloud text-primary"></span>
+                                    Lastname
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                Orujyan
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <strong class="text-white">
+                                    <span class="glyphicon glyphicon-bookmark text-primary"></span>
+                                    Username
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                ArmanOrujyan
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <strong class="text-white">
+                                    <span class="glyphicon glyphicon-eye-open text-primary"></span>
+                                    Role
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                User
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong class="text-white">
+                                    <span class="glyphicon glyphicon-envelope text-primary"></span>
+                                    Email
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                arman.orujyan.g@tumo.org
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong class="text-white">
+                                    <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                    created
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                19 jun 2020
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong class="text-white">
+                                    <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                    Modified
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                20 jun 2020 20:00:00
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--User Adress-->
+<div class="container">
+    <div class="panel-body inf-content p-3">
+        <div class="row d-flex">
+            <h2 class="text-white text-center col-12 mb-4">Billing and Shipping Addresses</h2>
+            <div class="col-12 col-md-5">
+                <div>
+                    <p class="text-white">1. <span> <b> Arman Orujyan </b></span> / 7 NW. Beech Ave.
+                        Ozone Park, NY 11417 / ARM0325620 / Armenia, Gyumri</p>
+
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-danger px-3 mr-3"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <button class="btn btn-primary px-3 "><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+
+                <hr class="bg-white">
+
+                <div>
+                    <p class="text-white">2. <span> <b> Arman Orujyan </b></span> / 7 NW. Beech Ave.
+                        Ozone Park, NY 11417 / ARM0325620 / Armenia, Gyumri</p>
+
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-danger px-3 mr-3"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <button class="btn btn-primary px-3 "><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+
+                <hr class="bg-white">
+
+                <div>
+                    <p class="text-white">3. <span> <b> Arman Orujyan </b></span> / 7 NW. Beech Ave.
+                        Ozone Park, NY 11417 / ARM0325620 / Armenia, Gyumri</p>
+
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-danger px-3 mr-3"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <button class="btn btn-primary px-3 "><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+
+                <hr class="bg-white">
+
+                <div>
+                    <p class="text-white">4. <span> <b> Arman Orujyan </b></span> / 7 NW. Beech Ave.
+                        Ozone Park, NY 11417 / ARM0325620 / Armenia, Gyumri</p>
+
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-danger px-3 mr-3"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <button class="btn btn-primary px-3 "><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-12 col-md-7">
+                <form class="form-horizontal add_address">
+                    <fieldset>
+                        <!-- Address form -->
+
+                        <h2 class="text-white text-center mt-5 mt-md-0 mb-4">Add Address</h2>
+
+                        <!-- full-name input-->
+                        <div class="form-group d-flex">
+                            <label class="text-primary d-none d-md-block">Full Name</label>
+                            <div class="w-100">
+                                <input id="full-name" name="full-name" type="text" placeholder="full name"
+                                       class="form-control w-100">
+                                <p class=text-primary"></p>
+                            </div>
+                        </div>
+                        <!-- address-line1 input-->
+                        <div class="form-group d-flex">
+                            <label class="text-primary  d-none d-md-block">Address Line 1</label>
+                            <div class="w-100">
+                                <input id="address-line1" name="address-line1" type="text" placeholder="address line 1"
+                                       class="form-control w-100">
+                                <p class="text-primary ml-3">Street address, P.O. box, company name, c/o</p>
+                            </div>
+                        </div>
+                        <!-- address-line2 input-->
+                        <div class="form-group d-flex">
+                            <label class="text-primary  d-none d-md-block">Address Line 2</label>
+                            <div class="w-100">
+                                <input id="address-line2" name="address-line2" type="text" placeholder="address line 2"
+                                       class="form-control w-100">
+                                <p class="text-primary ml-3">Apartment, suite , unit, building, floor, etc.</p>
+                            </div>
+                        </div>
+                        <!-- city input-->
+                        <div class="form-group d-flex">
+                            <label class="text-primary d-none d-md-block">City / Town</label>
+                            <div class="w-100">
+                                <input id="city" name="city" type="text" placeholder="city" class="form-control w-100">
+                                <p class=""></p>
+                            </div>
+                        </div>
+                        <!-- region input-->
+                        <div class="form-group d-flex">
+                            <label class="text-primary d-none d-md-block">State / Province / Region</label>
+                            <div class="w-100">
+                                <input id="region" name="region" type="text" placeholder="state / province / region"
+                                       class="form-control w-100">
+                                <p class=""></p>
+                            </div>
+                        </div>
+                        <!-- postal-code input-->
+                        <div class="form-group d-flex">
+                            <label class="text-primary d-none d-md-block">Zip / Postal Code</label>
+                            <div class="w-100">
+                                <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code"
+                                       class="form-control w-100">
+                                <p class=""></p>
+                            </div>
+                        </div>
+                        <!-- country select -->
+                        <div class="form-group d-flex">
+                            <label class="text-primary d-none d-md-block">Country</label>
+                            <div class="w-100">
+                                <select id="country" name="country" class="form-control w-100">
+                                    <option value="" selected="selected">(please select a country)</option>
+                                    <option value="AF">Afghanistan</option>
+                                    <option value="AL">Albania</option>
+                                    <option value="DZ">Algeria</option>
+                                    <option value="AS">American Samoa</option>
+                                    <option value="AD">Andorra</option>
+                                    <option value="AO">Angola</option>
+                                    <option value="AI">Anguilla</option>
+                                    <option value="AQ">Antarctica</option>
+                                    <option value="AG">Antigua and Barbuda</option>
+                                    <option value="AR">Argentina</option>
+                                    <option value="AM">Armenia</option>
+                                    <option value="OTHER">Other...</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--Payment Methods-->
+<div class="container">
+    <div class="panel-body inf-content p-3 mb-5">
+        <!-- For demo purpose -->
+        <div class="row mb-4">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 text-white"><b>Payment Forms</b></h1>
+            </div>
+        </div> <!-- End -->
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+                <div class="card bg-transparent">
+                    <div class="card-header bg-transparent">
+                        <div class=" shadow-sm pt-4 pl-2 pr-2 pb-2">
+                            <!-- Credit card form tabs -->
+                            <ul role="tablist" class="nav  nav-pills rounded nav-fill mb-3">
+                                <li class="nav-item"><a data-toggle="pill" href="#credit-card"
+                                                        class="nav-link active text-white "> <i
+                                        class="fa fa-credit-card mr-2"></i> Credit Card </a></li>
+                                <li class="nav-item"><a data-toggle="pill" href="#paypal" class="nav-link text-white ">
+                                    <i class="fa fa-paypal mr-2"></i> Paypal </a></li>
+                                <li class="nav-item"><a data-toggle="pill" href="#net-banking"
+                                                        class="nav-link text-white"> <i
+                                        class="fa fa-mobile-alt mr-2"></i> Net Banking </a></li>
+                            </ul>
+                        </div> <!-- End -->
+                        <!-- Credit card form content -->
+                        <div class="tab-content">
+                            <!-- credit card info-->
+                            <div id="credit-card" class="tab-pane fade show active pt-3">
+                                <form role="form">
+                                    <div class="form-group"><label>
+                                        <h6 class="text-white">Card Owner</h6>
+                                    </label> <input type="text" name="username" placeholder="Card Owner Name" required
+                                                    class="form-control "></div>
+                                    <div class="form-group"><label>
+                                        <h6 class="text-white">Card number</h6>
+                                    </label>
+                                        <div class="input-group"><input type="text" name="cardNumber"
+                                                                        placeholder="Valid card number"
+                                                                        class="form-control " required>
+                                            <div class="input-group-append"><span
+                                                    class="input-group-text text-muted"> <i
+                                                    class="fa fa-cc-visa mx-1"></i> <i
+                                                    class="fa fa-cc-mastercard mx-1"></i> <i
+                                                    class="fa fa-cc-amex mx-1"></i> </span></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="form-group"><label><span class="hidden-xs">
+                                                    <h6 class="text-white">Expiration Date</h6>
+                                                </span></label>
+                                                <div class="input-group"><input type="number" placeholder="MM" name=""
+                                                                                class="form-control" required> <input
+                                                        type="number" placeholder="YY" name="" class="form-control"
+                                                        required></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-4"><label data-toggle="tooltip"
+                                                                                title="Three digit CV code on the back of your card">
+                                                <h6 class="text-white">CVV <i
+                                                        class="fa fa-question-circle d-inline"></i></h6>
+                                            </label> <input type="text" required class="form-control"></div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer text-white">
+                                        <button type="button" class="subscribe btn btn-primary btn-block shadow-sm">
+                                            Add Card
+                                        </button>
+                                </form>
+                            </div>
+                        </div> <!-- End -->
+                        <!-- Paypal info -->
+                        <div id="paypal" class="tab-pane fade pt-3">
+                            <h6 class="pb-2 text-white">Select your paypal account type</h6>
+                            <div class="form-group "><label class="radio-inline text-white"> <input type="radio"
+                                                                                                    name="optradio"
+                                                                                                    checked> Domestic
+                            </label> <label class="radio-inline text-white"> <input type="radio" name="optradio"
+                                                                                    class="ml-5">International </label>
+                            </div>
+                            <p>
+                                <button type="button" class="btn btn-primary "><i class="fa fa-paypal mr-2"></i> Log
+                                    into my Paypal
+                                </button>
+                            </p>
+                            <p class="text-muted"> Note: After clicking on the button, you will be directed to a secure
+                                gateway for payment. After completing the payment process, you will be redirected back
+                                to the website to view details of your order. </p>
+                        </div> <!-- End -->
+                        <!-- bank transfer info -->
+                        <div id="net-banking" class="tab-pane fade pt-3">
+                            <div class="form-group "><label>
+                                <h6 class="text-white">Select your Bank</h6>
+                            </label> <select class="form-control text-white" id="ccmonth">
+                                <option value="" selected disabled>--Please select your Bank--</option>
+                                <option>Bank 1</option>
+                                <option>Bank 2</option>
+                                <option>Bank 3</option>
+                                <option>Bank 4</option>
+                                <option>Bank 5</option>
+                                <option>Bank 6</option>
+                                <option>Bank 7</option>
+                                <option>Bank 8</option>
+                                <option>Bank 9</option>
+                                <option>Bank 10</option>
+                            </select></div>
+                            <div class="form-group">
+                                <p>
+                                    <button type="button" class="btn btn-primary "><i class="fa fa-mobile-alt mr-2"></i>
+                                        Add Bank
+                                    </button>
+                                </p>
+                            </div>
+                            <p class="text-muted">Note: After clicking on the button, you will be directed to a secure
+                                gateway for payment. After completing the payment process, you will be redirected back
+                                to the website to view details of your order. </p>
+                        </div> <!-- End -->
+                        <!-- End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!--Modal: Login / Register Form-->
+<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Modal cascading tabs-->
+            <div class="modal-c-tabs">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i
+                                class="fa fa-user mr-1"></i>
+                            Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
+                                class="fa fa-user-plus mr-1"></i>
+                            Register</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panels -->
+                <div class="tab-content">
+                    <!--Panel 7-->
+                    <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body mb-1">
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput11"
+                                       class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput11">Your
+                                    password</label>
+                            </div>
+                            <div class="text-center mt-2">
+                                <button class="btn btn-info">Log in <i class="fas fa-sign-in ml-1"></i></button>
+                            </div>
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-center text-md-right mt-1">
+                                <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
+                                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+
+                    </div>
+                    <!--/.Panel 7-->
+
+                    <!--Panel 8-->
+                    <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body">
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput13"
+                                       class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput13">Your
+                                    password</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput14"
+                                       class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat
+                                    password</label>
+                            </div>
+
+                            <div class="text-center form-sm mt-2">
+                                <button class="btn btn-info">Sign up <i class="fa fa-sign-in ml-1"></i></button>
+                            </div>
+
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-right">
+                                <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                    <!--/.Panel 8-->
+                </div>
+
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+
+<!--Modal / My Orders-->
+<div class="modal fade " id="myOrdersModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">My Orders</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container ">
+                    <div class="panel-body inf-content p-3">
+                        <div class="table-responsive">
+                            <table class="table bg-dark table-hover table-dark px-3">
+                                <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Price</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">0865</th>
+                                    <td>Colt</td>
+                                    <td>15.11.20</td>
+                                    <td>$1299</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">0865</th>
+                                    <td>Colt</td>
+                                    <td>15.11.20</td>
+                                    <td>$1299</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">0865</th>
+                                    <td>Colt</td>
+                                    <td>15.11.20</td>
+                                    <td>$1299</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">0865</th>
+                                    <td>Colt</td>
+                                    <td>15.11.20</td>
+                                    <td>$1299</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Site footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>About</h6>
+                <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative to help the
+                    upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or
+                    snippets as the code wants to be simple. We will help programmers build up concepts in different
+                    programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL
+                    and Algorithm.</p>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Categories</h6>
+                <ul class="footer-links">
+                    <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+                    <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+                    <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+                    <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+                    <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+                    <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="http://scanfcode.com/about/">About Us</a></li>
+                    <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+                    <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+                    <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
+                    <a href="#">Scanfcode</a>.
+                </p>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <ul class="social-icons">
+                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+<script>
+    $(function () {
+        $('.selectpicker').selectpicker();
+    });
+</script>
+
+
+</body>
+</html>
